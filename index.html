@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KALAGNI Integrated Projects | Integrated EPC Solutions</title>
+  <meta name="description" content="KALAGNI Integrated Projects Private Limited: integrated EPC solutions across power, solar and BESS, infrastructure, MEPF, HVAC, railway and digital engineering, from concept to commissioning.">
+  <meta name="theme-color" content="#011c3a">
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- 1. Bootstrap CSS, then Bootstrap Icons (local copies) -->
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- 2. Our own CSS (after Bootstrap, so our styles win) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link visually-hidden-focusable" href="#main">Skip to main content</a>
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="topbar">
+    <div class="container d-flex align-items-center justify-content-center justify-content-lg-between gap-3 py-2">
+      <p class="topbar-tagline mb-0 d-none d-lg-block">Integrated Engineering. Reliable Execution.</p>
+      <ul class="list-unstyled d-flex align-items-center gap-3 gap-md-4 mb-0">
+        <li><a href="tel:+919912485530"><i class="bi bi-telephone-fill" aria-hidden="true"></i>+91 9912485530</a></li>
+        <li class="d-none d-sm-block"><a href="mailto:info@kalagni.co.in"><i class="bi bi-envelope-fill" aria-hidden="true"></i>info@kalagni.co.in</a></li>
+        <li class="d-none d-md-block"><i class="bi bi-patch-check-fill" aria-hidden="true"></i>ISO 9001 · 14001 · 45001</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR =================
+       navbar-expand-xl : full menu from 1200px, hamburger below
+       sticky-top       : stays at the top while scrolling
+       offcanvas-start  : on mobile the menu slides in from the left -->
+  <nav class="navbar navbar-expand-xl site-navbar sticky-top" aria-label="Main navigation">
+    <div class="container">
+
+      <a class="navbar-brand brand" href="index.html">
+        <img class="brand-logo" src="assets/images/logo-white.png" alt="KALAGNI Integrated Projects Private Limited" width="574" height="185">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-label="Open menu">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel">
+
+        <!-- Only visible on mobile (Bootstrap hides it from 1200px) -->
+        <div class="offcanvas-header">
+          <img class="brand-logo" id="mainNavLabel" src="assets/images/logo-white.png" alt="KALAGNI menu" width="574" height="185">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        </div>
+
+        <div class="offcanvas-body align-items-xl-center">
+          <ul class="navbar-nav flex-grow-1 justify-content-xl-center">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <!-- Menu order follows the visitor: what you do -> proof -> who you are -> contact -->
+
+            <!-- Services: MEGA MENU. "position-static" lets the menu stretch across the whole navbar -->
+            <li class="nav-item dropdown position-static">
+              <a class="nav-link dropdown-toggle" href="pages/services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+              <div class="dropdown-menu mega-menu">
+                <div class="container">
+                  <div class="row g-4">
+
+                    <div class="col-xl-3">
+                      <p class="mega-heading">Power &amp; Energy</p>
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="mega-link" href="pages/services.html#electrical">
+                            <span class="mega-icon"><i class="bi bi-lightning-charge" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Electrical Power Infrastructure</span><span class="mega-desc">Substations, HT/LT systems, cable networks</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="pages/services.html#solar-bess">
+                            <span class="mega-icon"><i class="bi bi-sun" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Solar &amp; BESS Solutions</span><span class="mega-desc">Solar PV, battery storage, grid connection</span></span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-xl-3">
+                      <p class="mega-heading">Buildings &amp; Infrastructure</p>
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="mega-link" href="pages/services.html#infrastructure">
+                            <span class="mega-icon"><i class="bi bi-buildings" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Infrastructure &amp; Construction</span><span class="mega-desc">Industrial, commercial &amp; residential</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="pages/services.html#mepf">
+                            <span class="mega-icon"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">MEPF Engineering</span><span class="mega-desc">Mechanical, electrical, plumbing &amp; fire</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="pages/services.html#hvac">
+                            <span class="mega-icon"><i class="bi bi-fan" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">HVAC Systems</span><span class="mega-desc">VRF, chillers, clean rooms, precision cooling</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="pages/services.html#railway-metro">
+                            <span class="mega-icon"><i class="bi bi-train-front" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Railway &amp; Metro Infrastructure</span><span class="mega-desc">Electrification, metro &amp; trackside works</span></span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-xl-3">
+                      <p class="mega-heading">Engineering &amp; Support</p>
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="mega-link" href="pages/services.html#digital">
+                            <span class="mega-icon"><i class="bi bi-cpu" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Engineering &amp; Digital Solutions</span><span class="mega-desc">ETAP, BIM, SCADA / IoT, AI-enabled</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="pages/services.html#approvals">
+                            <span class="mega-icon"><i class="bi bi-clipboard-check" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Approvals &amp; Project Delivery</span><span class="mega-desc">Statutory approvals &amp; utility coordination</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="pages/services.html#om">
+                            <span class="mega-icon"><i class="bi bi-tools" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Operations &amp; Maintenance</span><span class="mega-desc">Preventive maintenance, AMC &amp; monitoring</span></span>
+                          </a>
+                        </li>
+                      </ul>
+                      <a class="mega-all d-xl-none" href="pages/services.html">View all services <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+
+                    <!-- Promo card: desktop only -->
+                    <div class="col-xl-3 d-none d-xl-block">
+                      <div class="mega-promo">
+                        <p class="eyebrow">From concept to commissioning</p>
+                        <p class="mega-promo-title">Integrated <span>EPC Solutions</span></p>
+                        <p>One partner for engineering, approvals, execution and lifecycle support.</p>
+                        <a class="btn btn-gold btn-sm" href="pages/services.html">View all services <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/clients.html">Clients</a>
+            </li>
+
+            <!-- About: small dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="pages/about.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="pages/about.html#who-we-are">Who We Are</a></li>
+                <li><a class="dropdown-item" href="pages/about.html#values">Our Values</a></li>
+                <li><a class="dropdown-item" href="pages/about.html#leadership">Leadership Team</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/contact.html">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Action buttons: stacked in the mobile menu, side by side on desktop -->
+          <div class="d-flex flex-column flex-xl-row gap-2 mt-4 mt-xl-0 ms-xl-3">
+            <a class="btn btn-outline-gold btn-pill btn-sm px-3" href="assets/docs/kalagni-profile.pdf" download>
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Company Profile
+            </a>
+            <button type="button" class="btn btn-gold btn-pill btn-sm px-3" data-bs-toggle="modal" data-bs-target="#quoteModal">
+              <i class="bi bi-send" aria-hidden="true"></i> Get a Quote
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ================= HERO CAROUSEL =================
+         carousel-fade: slides fade into each other; data-bs-interval: 6 seconds per slide -->
+    <section class="hero" aria-label="Featured services">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="hero-slide" data-img="assets/images/hero-1.jpg">
+              <i class="bi hero-art bi-buildings" aria-hidden="true"></i>
+              <div class="container">
+                <div class="hero-content">
+                  <p class="eyebrow">From concept to commissioning</p>
+                  <h1 class="hero-title">Integrated <span>EPC Solutions</span></h1>
+                  <p class="hero-text">Integrated engineering. Reliable execution. Power, infrastructure, MEPF, HVAC and digital engineering, delivered by one accountable partner.</p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <a class="btn btn-gold btn-pill btn-lg" href="pages/services.html">Explore Services <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                    <button type="button" class="btn btn-outline-gold btn-pill btn-lg" data-bs-toggle="modal" data-bs-target="#quoteModal"><i class="bi bi-send" aria-hidden="true"></i> Get a Quote</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="hero-slide" data-img="assets/images/hero-2.jpg">
+              <i class="bi hero-art bi-lightning-charge" aria-hidden="true"></i>
+              <div class="container">
+                <div class="hero-content">
+                  <p class="eyebrow">Engineering · Execution · Testing · Commissioning</p>
+                  <h2 class="hero-title">Electrical Power <span>Infrastructure</span></h2>
+                  <p class="hero-text">HT/LT networks, GIS and AIS substations, underground cables and transmission lines, engineered and delivered according to the contracted scope.</p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <a class="btn btn-gold btn-pill btn-lg" href="pages/services.html#electrical">Power Infrastructure <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                    <button type="button" class="btn btn-outline-gold btn-pill btn-lg" data-bs-toggle="modal" data-bs-target="#quoteModal"><i class="bi bi-send" aria-hidden="true"></i> Get a Quote</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="hero-slide" data-img="assets/images/hero-3.jpg">
+              <i class="bi hero-art bi-sun" aria-hidden="true"></i>
+              <div class="container">
+                <div class="hero-content">
+                  <p class="eyebrow">Clean energy · Reliable power · Sustainable growth</p>
+                  <h2 class="hero-title">Solar &amp; <span>BESS Solutions</span></h2>
+                  <p class="hero-text">End-to-end solar PV and battery energy storage, from design and grid connectivity to commissioning and O&amp;M.</p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <a class="btn btn-gold btn-pill btn-lg" href="pages/services.html#solar-bess">Solar &amp; BESS <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                    <button type="button" class="btn btn-outline-gold btn-pill btn-lg" data-bs-toggle="modal" data-bs-target="#quoteModal"><i class="bi bi-send" aria-hidden="true"></i> Get a Quote</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="hero-slide" data-img="assets/images/hero-4.jpg">
+              <i class="bi hero-art bi-building-gear" aria-hidden="true"></i>
+              <div class="container">
+                <div class="hero-content">
+                  <p class="eyebrow">Plan · Design · Build · Deliver</p>
+                  <h2 class="hero-title">Infrastructure &amp; <span>Construction</span></h2>
+                  <p class="hero-text">Industrial, commercial and residential developments built through a planned, engineering-led and execution-focused approach.</p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <a class="btn btn-gold btn-pill btn-lg" href="pages/services.html#infrastructure">Infrastructure &amp; Construction <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                    <button type="button" class="btn btn-outline-gold btn-pill btn-lg" data-bs-toggle="modal" data-bs-target="#quoteModal"><i class="bi bi-send" aria-hidden="true"></i> Get a Quote</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev d-none d-lg-flex" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous slide</span>
+        </button>
+        <button class="carousel-control-next d-none d-lg-flex" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next slide</span>
+        </button>
+        <button type="button" class="hero-pause" aria-label="Pause slideshow"><i class="bi bi-pause-fill" aria-hidden="true"></i></button>
+      </div>
+    </section>
+
+    <!-- ================= STRENGTHS BAND ================= -->
+    <section class="band" aria-label="Our strengths">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+          <div class="col"><div class="band-item"><i class="bi bi-cone-striped" aria-hidden="true"></i><span>Multi-Disciplinary Expertise</span></div></div>
+          <div class="col"><div class="band-item"><i class="bi bi-bullseye" aria-hidden="true"></i><span>End-to-End Project Delivery</span></div></div>
+          <div class="col"><div class="band-item"><i class="bi bi-people-fill" aria-hidden="true"></i><span>Client-Centric Approach</span></div></div>
+          <div class="col"><div class="band-item"><i class="bi bi-tree-fill" aria-hidden="true"></i><span>Commitment to Sustainability</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="section section-soft" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head text-center">
+          <p class="eyebrow">What we do</p>
+          <h2 class="section-title heading-accent" id="services-title">Our <span>Services</span></h2>
+          <p class="section-sub">Nine integrated service lines across power, buildings and infrastructure, delivered by one accountable EPC partner.</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+          <div class="col">
+            <a class="service-card lift" href="pages/services.html#electrical">
+              <div class="service-card-media"><div class="media media-16x9 " data-img="assets/images/service-electrical.jpg" aria-hidden="true"><span class="media-icon"><i class="bi bi-lightning-charge" aria-hidden="true"></i></span><span class="media-label">service-electrical.jpg</span></div><span class="service-num">01</span></div>
+              <div class="service-card-body">
+                <span class="icon-ring"><i class="bi bi-lightning-charge" aria-hidden="true"></i></span>
+                <h3>Electrical Power Infrastructure</h3>
+                <p>HT/LT networks, GIS &amp; AIS substations, underground cables, transmission lines and control panels.</p>
+                <span class="more">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="service-card lift" href="pages/services.html#solar-bess">
+              <div class="service-card-media"><div class="media media-16x9 " data-img="assets/images/service-solar-bess.jpg" aria-hidden="true"><span class="media-icon"><i class="bi bi-sun" aria-hidden="true"></i></span><span class="media-label">service-solar-bess.jpg</span></div><span class="service-num">02</span></div>
+              <div class="service-card-body">
+                <span class="icon-ring"><i class="bi bi-sun" aria-hidden="true"></i></span>
+                <h3>Solar &amp; BESS Solutions</h3>
+                <p>Rooftop and ground-mounted solar, battery energy storage, grid connection and PPA support.</p>
+                <span class="more">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="service-card lift" href="pages/services.html#infrastructure">
+              <div class="service-card-media"><div class="media media-16x9 " data-img="assets/images/service-infrastructure.jpg" aria-hidden="true"><span class="media-icon"><i class="bi bi-buildings" aria-hidden="true"></i></span><span class="media-label">service-infrastructure.jpg</span></div><span class="service-num">03</span></div>
+              <div class="service-card-body">
+                <span class="icon-ring"><i class="bi bi-buildings" aria-hidden="true"></i></span>
+                <h3>Infrastructure &amp; Construction</h3>
+                <p>Industrial, commercial and residential buildings, civil works and land development.</p>
+                <span class="more">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="service-card lift" href="pages/services.html#mepf">
+              <div class="service-card-media"><div class="media media-16x9 " data-img="assets/images/service-mepf.jpg" aria-hidden="true"><span class="media-icon"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></span><span class="media-label">service-mepf.jpg</span></div><span class="service-num">04</span></div>
+              <div class="service-card-body">
+                <span class="icon-ring"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></span>
+                <h3>MEPF Engineering</h3>
+                <p>Integrated mechanical, electrical, plumbing and fire protection design and execution.</p>
+                <span class="more">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="service-card lift" href="pages/services.html#hvac">
+              <div class="service-card-media"><div class="media media-16x9 " data-img="assets/images/service-hvac.jpg" aria-hidden="true"><span class="media-icon"><i class="bi bi-fan" aria-hidden="true"></i></span><span class="media-label">service-hvac.jpg</span></div><span class="service-num">05</span></div>
+              <div class="service-card-body">
+                <span class="icon-ring"><i class="bi bi-fan" aria-hidden="true"></i></span>
+                <h3>HVAC Systems</h3>
+                <p>VRF/VRV, chillers, ventilation, clean rooms and precision cooling for every building type.</p>
+                <span class="more">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="service-card lift" href="pages/services.html#railway-metro">
+              <div class="service-card-media"><div class="media media-16x9 " data-img="assets/images/service-railway-metro.jpg" aria-hidden="true"><span class="media-icon"><i class="bi bi-train-front" aria-hidden="true"></i></span><span class="media-label">service-railway-metro.jpg</span></div><span class="service-num">06</span></div>
+              <div class="service-card-body">
+                <span class="icon-ring"><i class="bi bi-train-front" aria-hidden="true"></i></span>
+                <h3>Railway &amp; Metro Infrastructure</h3>
+                <p>Electrification foundations, metro civil works, trackside works and associated electrical infrastructure.</p>
+                <span class="more">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="service-card lift" href="pages/services.html#digital">
+              <div class="service-card-media"><div class="media media-16x9 " data-img="assets/images/service-digital.jpg" aria-hidden="true"><span class="media-icon"><i class="bi bi-cpu" aria-hidden="true"></i></span><span class="media-label">service-digital.jpg</span></div><span class="service-num">07</span></div>
+              <div class="service-card-body">
+                <span class="icon-ring"><i class="bi bi-cpu" aria-hidden="true"></i></span>
+                <h3>Engineering &amp; Digital Solutions</h3>
+                <p>ETAP studies, DIALux lighting, CAD &amp; BIM, SCADA/IoT, surveys and AI-enabled engineering.</p>
+                <span class="more">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="service-card lift" href="pages/services.html#approvals">
+              <div class="service-card-media"><div class="media media-16x9 " data-img="assets/images/service-approvals.jpg" aria-hidden="true"><span class="media-icon"><i class="bi bi-clipboard-check" aria-hidden="true"></i></span><span class="media-label">service-approvals.jpg</span></div><span class="service-num">08</span></div>
+              <div class="service-card-body">
+                <span class="icon-ring"><i class="bi bi-clipboard-check" aria-hidden="true"></i></span>
+                <h3>Approvals &amp; Project Delivery</h3>
+                <p>Statutory approvals, utility coordination, land and regulatory support, PPA and grid connection.</p>
+                <span class="more">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a class="service-card lift" href="pages/services.html#om">
+              <div class="service-card-media"><div class="media media-16x9 " data-img="assets/images/service-om.jpg" aria-hidden="true"><span class="media-icon"><i class="bi bi-tools" aria-hidden="true"></i></span><span class="media-label">service-om.jpg</span></div><span class="service-num">09</span></div>
+              <div class="service-card-body">
+                <span class="icon-ring"><i class="bi bi-tools" aria-hidden="true"></i></span>
+                <h3>Operations &amp; Maintenance</h3>
+                <p>Electrical, solar, MEPF and facility O&amp;M with condition monitoring and long-term AMC support.</p>
+                <span class="more">Learn more <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTORS ================= -->
+    <section class="section" aria-labelledby="sectors-title">
+      <div class="container">
+        <div class="section-head text-center">
+          <p class="eyebrow">Sectors we serve</p>
+          <h2 class="section-title heading-accent" id="sectors-title">Experienced <span>Across Sectors</span></h2>
+          <p class="section-sub">Power, renewable energy, buildings, transport and digital: integrated EPC solutions for every stage of the asset lifecycle.</p>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center gap-4">
+          <a class="sector" href="pages/services.html#electrical"><span class="sector-circle"><i class="bi bi-lightning-charge" aria-hidden="true"></i></span><span class="sector-label">Power Infrastructure</span></a>
+          <a class="sector" href="pages/services.html#solar-bess"><span class="sector-circle"><i class="bi bi-sun" aria-hidden="true"></i></span><span class="sector-label">Renewable Energy</span></a>
+          <a class="sector" href="pages/services.html#infrastructure"><span class="sector-circle"><i class="bi bi-buildings" aria-hidden="true"></i></span><span class="sector-label">Buildings &amp; Construction</span></a>
+          <a class="sector" href="pages/services.html#mepf"><span class="sector-circle"><i class="bi bi-fan" aria-hidden="true"></i></span><span class="sector-label">MEPF &amp; HVAC</span></a>
+          <a class="sector" href="pages/services.html#railway-metro"><span class="sector-circle"><i class="bi bi-train-front" aria-hidden="true"></i></span><span class="sector-label">Railway &amp; Metro</span></a>
+          <a class="sector" href="pages/services.html#digital"><span class="sector-circle"><i class="bi bi-cpu" aria-hidden="true"></i></span><span class="sector-label">Digital Solutions</span></a>
+          <a class="sector" href="pages/services.html#om"><span class="sector-circle"><i class="bi bi-tools" aria-hidden="true"></i></span><span class="sector-label">Operations &amp; Maintenance</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DELIVERY WORKFLOW ================= -->
+    <section class="section section-navy" id="workflow" aria-labelledby="workflow-title">
+      <div class="container">
+        <div class="section-head text-center">
+          <p class="eyebrow">A coordinated EPC approach for reliable project delivery</p>
+          <h2 class="section-title heading-accent" id="workflow-title">Our <span>Delivery Workflow</span></h2>
+          <p class="section-sub">From concept to commissioning: one coordinated process, one accountable partner.</p>
+        </div>
+        <ol class="row row-cols-2 row-cols-md-4 row-cols-xl-8 g-3 workflow list-unstyled mb-0">
+          <li class="col"><div class="step"><span class="step-num">01</span>
+            <span class="icon-ring"><i class="bi bi-pencil-square" aria-hidden="true"></i></span><span class="step-label">Concept Design</span></div></li>
+          <li class="col"><div class="step"><span class="step-num">02</span>
+            <span class="icon-ring"><i class="bi bi-gear" aria-hidden="true"></i></span><span class="step-label">Custom Engineering</span></div></li>
+          <li class="col"><div class="step"><span class="step-num">03</span>
+            <span class="icon-ring"><i class="bi bi-clipboard-check" aria-hidden="true"></i></span><span class="step-label">Statutory Approvals Coordination</span></div></li>
+          <li class="col"><div class="step"><span class="step-num">04</span>
+            <span class="icon-ring"><i class="bi bi-cart3" aria-hidden="true"></i></span><span class="step-label">Procurement Coordination</span></div></li>
+          <li class="col"><div class="step"><span class="step-num">05</span>
+            <span class="icon-ring"><i class="bi bi-cone-striped" aria-hidden="true"></i></span><span class="step-label">Installation &amp; Execution</span></div></li>
+          <li class="col"><div class="step"><span class="step-num">06</span>
+            <span class="icon-ring"><i class="bi bi-tools" aria-hidden="true"></i></span><span class="step-label">Testing &amp; Commissioning</span></div></li>
+          <li class="col"><div class="step"><span class="step-num">07</span>
+            <span class="icon-ring"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></span><span class="step-label">Handover &amp; Documentation</span></div></li>
+          <li class="col"><div class="step"><span class="step-num">08</span>
+            <span class="icon-ring"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></span><span class="step-label">AMC &amp; Lifecycle Support</span></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE =================
+         CONFIRM before publishing: per the company profile (slide 13), these are organizations
+         associated with the LEADERSHIP TEAM, and references must be confirmed before publication.
+         Names are shown as text; use logos only with permission. -->
+    <section class="section" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-head text-center">
+          <p class="eyebrow">Trusted by leading organizations</p>
+          <h2 class="section-title heading-accent" id="experience-title">Experience That <span>Builds Confidence</span></h2>
+          <p class="section-sub">Our leadership team has been associated with reputed national and multinational organizations and public sector bodies across diverse sectors.</p>
+        </div>
+      </div>
+      <div class="marquee mb-5">
+        <ul class="marquee-track">
+            <li class="org-pill">L&amp;T Construction</li>
+            <li class="org-pill">Tata Projects</li>
+            <li class="org-pill">Siemens</li>
+            <li class="org-pill">GE Vernova</li>
+            <li class="org-pill">ABB</li>
+            <li class="org-pill">Schneider Electric</li>
+            <li class="org-pill">TCS</li>
+            <li class="org-pill">Tech Mahindra</li>
+            <li class="org-pill">NTT Global Data Centers</li>
+            <li class="org-pill">STT GDC India</li>
+            <li class="org-pill">Capgemini</li>
+            <li class="org-pill">Maruti Suzuki</li>
+            <li class="org-pill">Dr. Reddy's</li>
+            <li class="org-pill">Aurobindo</li>
+            <li class="org-pill">ITC Limited</li>
+            <li class="org-pill">DLF</li>
+            <li class="org-pill">Prestige Group</li>
+            <li class="org-pill">Embassy Group</li>
+            <li class="org-pill">Aparna</li>
+            <li class="org-pill">My Home Group</li>
+            <li class="org-pill">Vamsiram</li>
+            <li class="org-pill">SMR Holdings</li>
+            <li class="org-pill">Muppa</li>
+            <li class="org-pill">Orange Constructions</li>
+            <li class="org-pill">Adani Green Energy</li>
+            <li class="org-pill">Tata Power Solar</li>
+            <li class="org-pill">Vijaya Diagnostic Centre</li>
+            <li class="org-pill" aria-hidden="true">L&amp;T Construction</li>
+            <li class="org-pill" aria-hidden="true">Tata Projects</li>
+            <li class="org-pill" aria-hidden="true">Siemens</li>
+            <li class="org-pill" aria-hidden="true">GE Vernova</li>
+            <li class="org-pill" aria-hidden="true">ABB</li>
+            <li class="org-pill" aria-hidden="true">Schneider Electric</li>
+            <li class="org-pill" aria-hidden="true">TCS</li>
+            <li class="org-pill" aria-hidden="true">Tech Mahindra</li>
+            <li class="org-pill" aria-hidden="true">NTT Global Data Centers</li>
+            <li class="org-pill" aria-hidden="true">STT GDC India</li>
+            <li class="org-pill" aria-hidden="true">Capgemini</li>
+            <li class="org-pill" aria-hidden="true">Maruti Suzuki</li>
+            <li class="org-pill" aria-hidden="true">Dr. Reddy's</li>
+            <li class="org-pill" aria-hidden="true">Aurobindo</li>
+            <li class="org-pill" aria-hidden="true">ITC Limited</li>
+            <li class="org-pill" aria-hidden="true">DLF</li>
+            <li class="org-pill" aria-hidden="true">Prestige Group</li>
+            <li class="org-pill" aria-hidden="true">Embassy Group</li>
+            <li class="org-pill" aria-hidden="true">Aparna</li>
+            <li class="org-pill" aria-hidden="true">My Home Group</li>
+            <li class="org-pill" aria-hidden="true">Vamsiram</li>
+            <li class="org-pill" aria-hidden="true">SMR Holdings</li>
+            <li class="org-pill" aria-hidden="true">Muppa</li>
+            <li class="org-pill" aria-hidden="true">Orange Constructions</li>
+            <li class="org-pill" aria-hidden="true">Adani Green Energy</li>
+            <li class="org-pill" aria-hidden="true">Tata Power Solar</li>
+            <li class="org-pill" aria-hidden="true">Vijaya Diagnostic Centre</li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+          <div class="col"><div class="vp-item"><span class="icon-outline"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
+            <div><p class="vp-title">Multi-Sector Exposure</p><p class="vp-text">Across power, infrastructure, industrial and commercial sectors.</p></div></div></div>
+          <div class="col"><div class="vp-item"><span class="icon-outline"><i class="bi bi-people" aria-hidden="true"></i></span>
+            <div><p class="vp-title">Proven Execution Capability</p><p class="vp-text">Delivered complex projects through experienced leadership.</p></div></div></div>
+          <div class="col"><div class="vp-item"><span class="icon-outline"><i class="bi bi-gear" aria-hidden="true"></i></span>
+            <div><p class="vp-title">Strong Industry Relationships</p><p class="vp-text">Trusted by leading organizations and public sector entities.</p></div></div></div>
+          <div class="col"><div class="vp-item"><span class="icon-outline"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
+            <div><p class="vp-title">Knowledge Transfer to KALAGNI</p><p class="vp-text">Applying best practices and experience to deliver value.</p></div></div></div>
+        </div>
+        <div class="text-center mt-5">
+          <a class="btn btn-outline-navy btn-pill" href="pages/clients.html">View clients &amp; experience <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CERTIFICATIONS ================= -->
+    <section class="section section-soft" aria-labelledby="certs-title">
+      <div class="container">
+        <div class="section-head text-center">
+          <p class="eyebrow">Quality · Environment · Safety</p>
+          <h2 class="section-title heading-accent" id="certs-title">Certifications &amp; <span>Compliance</span></h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
+          <div class="col"><div class="cert"><div class="cert-badge">ISO<small>9001:2015</small></div>
+            <p class="cert-title">ISO 9001:2015</p><p class="cert-sub">Quality Management</p></div></div>
+          <div class="col"><div class="cert"><div class="cert-badge">ISO<small>14001:2015</small></div>
+            <p class="cert-title">ISO 14001:2015</p><p class="cert-sub">Environmental Management</p></div></div>
+          <div class="col"><div class="cert"><div class="cert-badge">ISO<small>45001:2018</small></div>
+            <p class="cert-title">ISO 45001:2018</p><p class="cert-sub">Occupational Health &amp; Safety</p></div></div>
+          <div class="col"><div class="cert"><div class="cert-badge"><i class="bi bi-bank" aria-hidden="true"></i></div>
+            <p class="cert-title">MSME</p><p class="cert-sub">Registered</p></div></div>
+          <div class="col"><div class="cert"><div class="cert-badge"><i class="bi bi-clipboard-check" aria-hidden="true"></i></div>
+            <p class="cert-title">Statutory Compliances</p><p class="cert-sub">As applicable</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHO WE ARE ================= -->
+    <section class="section" id="who-we-are" aria-labelledby="who-title">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5">
+            <p class="eyebrow">Who we are</p>
+            <h2 class="section-title heading-accent" id="who-title">Who <span>We Are</span></h2>
+            <p class="tagline-spaced mb-4">Integrated Solutions | Reliable Execution</p>
+            <div class="lead-border">
+              <p>KALAGNI Integrated Projects Private Limited is an integrated EPC contractor delivering end-to-end solutions across Power, Infrastructure, MEPF, HVAC and Digital Engineering. We bring together engineering expertise, execution excellence and project management discipline to deliver reliable, sustainable and future-ready infrastructure for our clients.</p>
+              <p>With a multi-disciplinary team and a collaborative approach, we take projects from concept to commissioning, ensuring quality, safety, on-time delivery and long-term value.</p>
+            </div>
+            <a class="btn btn-outline-navy btn-pill mt-4" href="pages/about.html">More about us <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <ul class="highlight-list">
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-gear" aria-hidden="true"></i></span>Integrated EPC Capabilities</li>
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-shield-check" aria-hidden="true"></i></span>Quality, Safety &amp; Compliance</li>
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-people" aria-hidden="true"></i></span>Experienced Leadership Team</li>
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>Client-Focused Execution</li>
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-tree" aria-hidden="true"></i></span>Sustainable Growth</li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="slant-frame"><div class="media media-4x3 media-slant" data-img="assets/images/about.jpg" role="img" aria-label="KALAGNI office building"><span class="media-icon"><i class="bi bi-buildings" aria-hidden="true"></i></span><span class="media-label">about.jpg</span></div></div>
+            <p class="side-quote mt-4 mb-0">People Driving Possibilities</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <p class="eyebrow">Discuss · Partner · Plan · Execute · Grow</p>
+            <h2 class="section-title mb-2" id="cta-title">Let's Build a <span>Stronger Tomorrow</span> Together</h2>
+            <p class="mb-0">KALAGNI is ready to partner with clients, consultants and institutions to deliver reliable, future-ready infrastructure across power, renewable energy, buildings and beyond.</p>
+          </div>
+          <div class="col-lg-4 d-flex flex-wrap gap-2 justify-content-lg-end">
+            <button type="button" class="btn btn-gold btn-pill btn-lg" data-bs-toggle="modal" data-bs-target="#quoteModal"><i class="bi bi-send" aria-hidden="true"></i> Get a Quote</button>
+            <a class="btn btn-outline-gold btn-pill btn-lg" href="tel:+919912485530"><i class="bi bi-telephone" aria-hidden="true"></i> Call Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-md-6 col-xl-4">
+            <a href="index.html" class="d-inline-block mb-3">
+              <img class="footer-logo" src="assets/images/logo-white.png" alt="KALAGNI Integrated Projects Private Limited" width="574" height="185" loading="lazy">
+            </a>
+            <p>An integrated EPC contractor delivering end-to-end solutions across power, infrastructure, MEPF, HVAC and digital engineering, from concept to commissioning.</p>
+            <ul class="footer-certs list-unstyled d-flex flex-wrap gap-2 mb-0">
+              <li>ISO 9001:2015</li><li>ISO 14001:2015</li><li>ISO 45001:2018</li><li>MSME Registered</li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-xl-2">
+            <h2 class="footer-heading">Quick Links</h2>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="pages/services.html">Services</a></li>
+              <li><a href="pages/clients.html">Clients</a></li>
+              <li><a href="pages/about.html">About Us</a></li>
+              <li><a href="pages/about.html#leadership">Leadership</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+              <li><a href="assets/docs/kalagni-profile.pdf" download>Company Profile (PDF)</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-xl-3">
+            <h2 class="footer-heading">Our Services</h2>
+            <ul class="footer-links">
+              <li><a href="pages/services.html#electrical">Electrical Power Infrastructure</a></li>
+              <li><a href="pages/services.html#solar-bess">Solar &amp; BESS Solutions</a></li>
+              <li><a href="pages/services.html#infrastructure">Infrastructure &amp; Construction</a></li>
+              <li><a href="pages/services.html#mepf">MEPF Engineering</a></li>
+              <li><a href="pages/services.html#hvac">HVAC Systems</a></li>
+              <li><a href="pages/services.html#railway-metro">Railway &amp; Metro Infrastructure</a></li>
+              <li><a href="pages/services.html#digital">Engineering &amp; Digital Solutions</a></li>
+              <li><a href="pages/services.html#approvals">Approvals &amp; Project Delivery</a></li>
+              <li><a href="pages/services.html#om">Operations &amp; Maintenance</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 col-xl-3">
+            <h2 class="footer-heading">Get in Touch</h2>
+            <ul class="footer-contact">
+              <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i><span>Plot No. 59, Lumbini Avenue, Gachibowli, Serilingampally, K.V. Rangareddy, Telangana 500032, India</span></li>
+              <li><i class="bi bi-telephone-fill" aria-hidden="true"></i><a href="tel:+919912485530">+91 9912485530</a></li>
+              <li><i class="bi bi-envelope-fill" aria-hidden="true"></i><a href="mailto:info@kalagni.co.in">info@kalagni.co.in</a></li>
+              <li><i class="bi bi-whatsapp" aria-hidden="true"></i><a href="https://wa.me/919912485530" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrolling taglines (decorative, so hidden from screen readers) -->
+    <div class="footer-marquee marquee" aria-hidden="true">
+      <ul class="marquee-track">
+        <li>Integrated Engineering</li>
+        <li>Reliable Execution</li>
+        <li>From Concept to Commissioning</li>
+        <li>People. Places. Progress.</li>
+        <li>Powering a Brighter Tomorrow</li>
+        <li>Youth Driven. Experience Backed.</li>
+        <li>Integrated Engineering</li>
+        <li>Reliable Execution</li>
+        <li>From Concept to Commissioning</li>
+        <li>People. Places. Progress.</li>
+        <li>Powering a Brighter Tomorrow</li>
+        <li>Youth Driven. Experience Backed.</li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 text-center text-md-start">
+        <p class="mb-0">&copy; <span class="js-year">2026</span> KALAGNI Integrated Projects Private Limited. All rights reserved.</p>
+        <p class="mb-0">CIN: U42202TS2026PTC224342 · GSTIN: 36AANCK3239M1Z0</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING BUTTONS ================= -->
+  <div class="float-actions">
+    <a class="float-btn float-whatsapp" href="https://wa.me/919912485530" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-label="Chat on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+    <button type="button" class="float-btn float-quote" data-bs-toggle="modal" data-bs-target="#quoteModal" aria-label="Get a quote" data-label="Get a Quote"><i class="bi bi-send" aria-hidden="true"></i></button>
+    <button type="button" class="float-btn float-top js-back-to-top" aria-label="Back to top" data-label="Back to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
+  </div>
+
+  <!-- ================= ENQUIRY POPUP (MODAL) ================= -->
+  <div class="modal fade quote-modal" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow mb-1">Discuss · Partner · Plan</p>
+            <h2 class="modal-title h5 mb-0" id="quoteModalTitle">Request a Quote</h2>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-body-secondary">Tell us about your project and our team will get back to you. Prefer to talk? Call <a href="tel:+919912485530">+91 9912485530</a> or <a href="https://wa.me/919912485530" target="_blank" rel="noopener">message us on WhatsApp</a>.</p>
+          <form class="js-enquiry-form" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="q-name" class="form-label">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" class="form-control" id="q-name" name="name" autocomplete="name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="q-company" class="form-label">Company</label>
+              <input type="text" class="form-control" id="q-company" name="company" autocomplete="organization">
+            </div>
+            <div class="col-md-6">
+              <label for="q-email" class="form-label">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" class="form-control" id="q-email" name="email" autocomplete="email" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="q-phone" class="form-label">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" class="form-control" id="q-phone" name="phone" autocomplete="tel" pattern="[0-9+ \-]{8,20}" required>
+              <div class="invalid-feedback">Please enter a valid phone number.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="q-service" class="form-label">Service required <span class="req" aria-hidden="true">*</span></label>
+              <select class="form-select" id="q-service" name="service" required>
+                <option value="" selected disabled>Select a service</option><option value="Electrical Power Infrastructure">Electrical Power Infrastructure</option><option value="Solar &amp; BESS Solutions">Solar &amp; BESS Solutions</option><option value="Infrastructure &amp; Construction">Infrastructure &amp; Construction</option><option value="MEPF Engineering">MEPF Engineering</option><option value="HVAC Systems">HVAC Systems</option><option value="Railway &amp; Metro Infrastructure">Railway &amp; Metro Infrastructure</option><option value="Engineering &amp; Digital Solutions">Engineering &amp; Digital Solutions</option><option value="Approvals &amp; Project Delivery">Approvals &amp; Project Delivery</option><option value="Operations &amp; Maintenance">Operations &amp; Maintenance</option><option value="Other / multiple services">Other / multiple services</option>
+              </select>
+              <div class="invalid-feedback">Please choose a service.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="q-location" class="form-label">Project location</label>
+              <input type="text" class="form-control" id="q-location" name="location" autocomplete="address-level2">
+            </div>
+            <div class="col-12">
+              <label for="q-message" class="form-label">Project details <span class="req" aria-hidden="true">*</span></label>
+              <textarea class="form-control" id="q-message" name="message" rows="4" required></textarea>
+              <div class="invalid-feedback">Please describe your requirement briefly.</div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="q-consent" name="consent" required>
+                <label class="form-check-label small" for="q-consent">I agree to be contacted by KALAGNI about this enquiry.</label>
+                <div class="invalid-feedback">Please confirm so we can contact you.</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-gold btn-pill btn-lg px-4"><i class="bi bi-send" aria-hidden="true"></i> Send Enquiry</button>
+            </div>
+          </div>
+          <div class="form-success alert alert-success mt-3 mb-0" role="status" tabindex="-1">
+            <i class="bi bi-check-circle-fill" aria-hidden="true"></i> Thank you! Your enquiry has been noted. Our team will get back to you shortly.
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Bootstrap JS bundle (local copy) -->
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <!-- 4. Our own JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

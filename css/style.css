@@ -1,0 +1,1492 @@
+/* =========================================================
+   style.css: KALAGNI custom styles
+   Loads AFTER Bootstrap, so anything here overrides it.
+   Keep media queries right under the rule they modify.
+   ========================================================= */
+
+/* ---------- 0. Fonts (stored locally in assets/fonts) ----------
+   Paths are relative to THIS file (css/), so "../assets/fonts"
+   works for every page, whether it is in the root or in pages/. */
+@font-face { font-family: "Montserrat"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("../assets/fonts/montserrat-700.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; font-display: swap;
+  src: url("../assets/fonts/montserrat-800.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("../assets/fonts/poppins-400.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("../assets/fonts/poppins-500.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 600; font-style: normal; font-display: swap;
+  src: url("../assets/fonts/poppins-600.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("../assets/fonts/poppins-700.woff2") format("woff2"); }
+
+/* ---------- 1. Variables (colors measured from the KALAGNI profile PDF) ---------- */
+:root {
+  /* Navy: the main brand color */
+  --kg-navy-950: #021734;   /* heading text ("WHO", "ELECTRICAL POWER") */
+  --kg-navy-900: #011c3a;   /* dark bands, footer, card headers, icon circles */
+  --kg-navy-800: #012b55;   /* top header bar (gradient start) */
+  --kg-navy-700: #013666;   /* top header bar (gradient end), hover */
+  --kg-navy-600: #03458d;   /* brighter navy: links, small highlights */
+
+  /* Gold: the accent color */
+  --kg-gold-500: #eba40b;   /* logo flame, gold text on navy, numbers "01", icons, lines */
+  --kg-gold-600: #d19506;   /* gold heading words on white (big headings only) */
+  --kg-gold-300: #fcc04c;   /* light gold highlight, hover */
+
+  /* Text */
+  --kg-text-strong: #212649; /* card titles */
+  --kg-text: #2e3452;        /* body paragraphs (dark slate-navy) */
+  --kg-text-muted: #62677a;  /* bullet lists, small text */
+
+  /* Backgrounds and lines */
+  --kg-bg: #ffffff;
+  --kg-bg-soft: #f7fbfe;
+  --kg-card: #fbfbfb;
+  --kg-line: rgba(1, 28, 58, 0.1);
+
+  --kg-gradient-header: linear-gradient(90deg, var(--kg-navy-800), var(--kg-navy-700));
+  --kg-shadow: 0 16px 32px rgba(1, 28, 58, 0.12);
+
+  /* Fonts */
+  --kg-font-heading: "Montserrat", system-ui, sans-serif;
+  --kg-font-body: "Poppins", system-ui, sans-serif;
+
+  /* Height of the sticky navbar, so anchor jumps don't hide headings under it */
+  --kg-nav-height: 96px;
+
+  /* Hand our colors and fonts to Bootstrap's own variables */
+  --bs-body-font-family: var(--kg-font-body);
+  --bs-body-color: var(--kg-text);
+  --bs-body-bg: var(--kg-bg);
+  --bs-link-color-rgb: 3, 69, 141;        /* = --kg-navy-600 */
+  --bs-link-hover-color-rgb: 1, 28, 58;   /* = --kg-navy-900 */
+}
+
+/* ---------- 2. Global ---------- */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Every element with an id leaves room for the sticky navbar when jumped to */
+[id] { scroll-margin-top: var(--kg-nav-height); }
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--kg-font-heading);
+  font-weight: 800;
+  color: var(--kg-navy-950);
+}
+
+/* Two-tone headings like the PDF: "WHO <span>WE ARE</span>" */
+.heading-accent span { color: var(--kg-gold-600); }
+
+/* Small letter-spaced line above or below headings ("INTEGRATED SOLUTIONS | RELIABLE EXECUTION") */
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* "Skip to content" link: invisible until focused with the keyboard */
+.skip-link:focus {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: var(--kg-gold-500);
+  color: var(--kg-navy-950);
+  font-weight: 600;
+  border-radius: 0.375rem;
+}
+
+/* ---------- 3. Buttons ----------
+   Bootstrap 5.3 buttons read their colors from --bs-btn-* variables,
+   so a new button style only has to set those variables. */
+.btn-gold {
+  --bs-btn-color: var(--kg-navy-950);
+  --bs-btn-bg: var(--kg-gold-500);
+  --bs-btn-border-color: var(--kg-gold-500);
+  --bs-btn-hover-color: var(--kg-navy-950);
+  --bs-btn-hover-bg: var(--kg-gold-300);
+  --bs-btn-hover-border-color: var(--kg-gold-300);
+  --bs-btn-active-color: var(--kg-navy-950);
+  --bs-btn-active-bg: var(--kg-gold-600);
+  --bs-btn-active-border-color: var(--kg-gold-600);
+  --bs-btn-focus-shadow-rgb: 235, 164, 11;
+  font-weight: 600;
+}
+
+.btn-outline-navy {
+  --bs-btn-color: var(--kg-navy-900);
+  --bs-btn-border-color: var(--kg-navy-900);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--kg-navy-900);
+  --bs-btn-hover-border-color: var(--kg-navy-900);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--kg-navy-950);
+  --bs-btn-active-border-color: var(--kg-navy-950);
+  --bs-btn-focus-shadow-rgb: 1, 28, 58;
+  font-weight: 600;
+}
+
+/* Gold outline: for navy backgrounds (navbar, footer, dark bands) */
+.btn-outline-gold {
+  --bs-btn-color: var(--kg-gold-500);
+  --bs-btn-border-color: var(--kg-gold-500);
+  --bs-btn-hover-color: var(--kg-navy-950);
+  --bs-btn-hover-bg: var(--kg-gold-500);
+  --bs-btn-hover-border-color: var(--kg-gold-500);
+  --bs-btn-active-color: var(--kg-navy-950);
+  --bs-btn-active-bg: var(--kg-gold-600);
+  --bs-btn-active-border-color: var(--kg-gold-600);
+  --bs-btn-focus-shadow-rgb: 235, 164, 11;
+  font-weight: 600;
+}
+
+.btn-pill { border-radius: 50rem; }
+
+/* ---------- 4. Top bar (above the navbar) ---------- */
+.topbar {
+  background: var(--kg-navy-950);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8125rem;
+}
+.topbar-tagline {
+  color: var(--kg-gold-500);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.topbar a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.topbar a:hover,
+.topbar a:focus-visible { color: var(--kg-gold-500); }
+.topbar i { color: var(--kg-gold-500); margin-right: 0.35rem; }
+
+/* ---------- 5. Navbar ---------- */
+/* Navy bar like the header bar on every slide of the PDF (the official logo has white text) */
+.site-navbar {
+  /* Bootstrap navbar variables */
+  --bs-navbar-padding-y: 0.6rem;
+  --bs-navbar-color: rgba(255, 255, 255, 0.9);
+  --bs-navbar-hover-color: var(--kg-gold-500);
+  --bs-navbar-active-color: #fff;
+  --bs-navbar-nav-link-padding-x: 0.9rem;
+
+  background: var(--kg-gradient-header);
+  /* Gold line along the bottom (an inset shadow, so dropdowns can sit right under it) */
+  box-shadow: inset 0 -3px 0 var(--kg-gold-500), 0 4px 16px rgba(1, 28, 58, 0.25);
+}
+
+/* Logo image (white text version, for navy backgrounds) */
+.brand { display: inline-flex; align-items: center; }
+.brand-logo {
+  height: 48px;
+  width: auto;
+}
+@media (min-width: 1200px) {
+  .brand-logo { height: 60px; }
+}
+
+/* Hamburger button: white on navy, always clearly visible */
+.site-navbar .navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  padding: 0.3rem 0.55rem;
+}
+.site-navbar .navbar-toggler:focus { box-shadow: 0 0 0 0.2rem rgba(235, 164, 11, 0.5); }
+
+/* Nav links */
+.site-navbar .nav-link {
+  position: relative;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+/* Dropdown caret turns upside down while open */
+.site-navbar .dropdown-toggle::after { transition: transform 0.2s ease; }
+.site-navbar .dropdown-toggle.show::after { transform: rotate(180deg); }
+
+/* Desktop only (navbar is expanded from 1200px = "xl") */
+@media (min-width: 1200px) {
+  /* Gold underline that grows on hover. ::before is used because
+     Bootstrap already uses ::after for the dropdown caret. */
+  .site-navbar .navbar-nav > .nav-item > .nav-link::before {
+    content: "";
+    position: absolute;
+    left: var(--bs-navbar-nav-link-padding-x);
+    bottom: 0.2rem;
+    width: 0;
+    height: 2px;
+    background: var(--kg-gold-500);
+    transition: width 0.25s ease;
+  }
+  .site-navbar .navbar-nav > .nav-item > .nav-link:hover::before,
+  .site-navbar .navbar-nav > .nav-item > .nav-link:focus-visible::before,
+  .site-navbar .navbar-nav > .nav-item > .nav-link.active::before,
+  .site-navbar .navbar-nav > .nav-item > .nav-link.show::before {
+    width: calc(100% - 2 * var(--bs-navbar-nav-link-padding-x));
+  }
+}
+
+/* Small dropdown (About) */
+.site-navbar .dropdown-menu {
+  --bs-dropdown-link-color: var(--kg-navy-950);
+  --bs-dropdown-link-hover-color: var(--kg-navy-600);
+  --bs-dropdown-link-hover-bg: var(--kg-bg-soft);
+  --bs-dropdown-link-active-color: #fff;
+  --bs-dropdown-link-active-bg: var(--kg-navy-900);
+  --bs-dropdown-font-size: 0.9rem;
+}
+@media (min-width: 1200px) {
+  .site-navbar .dropdown:not(.position-static) > .dropdown-menu {
+    margin-top: var(--bs-navbar-padding-y);
+    padding: 0.5rem;
+    border: 0;
+    border-top: 3px solid var(--kg-gold-500);
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: var(--kg-shadow);
+  }
+  .site-navbar .dropdown-item {
+    border-radius: 0.375rem;
+    padding: 0.55rem 1rem;
+  }
+}
+
+/* ---------- 6. Services mega menu ---------- */
+.mega-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--kg-navy-600);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--kg-line);
+}
+
+.mega-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.6rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.mega-link:hover,
+.mega-link:focus-visible { background: var(--kg-bg-soft); }
+
+/* Round navy icon with a gold ring, like the icon badges in the PDF */
+.mega-icon {
+  flex: 0 0 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--kg-navy-900);
+  border: 2px solid var(--kg-gold-500);
+  color: var(--kg-gold-500);
+  font-size: 1.05rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.mega-link:hover .mega-icon,
+.mega-link:focus-visible .mega-icon {
+  background: var(--kg-gold-500);
+  color: var(--kg-navy-950);
+}
+
+.mega-title {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--kg-navy-950);
+}
+.mega-desc {
+  display: block;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--kg-text-muted);
+}
+
+/* Navy promo card at the right of the mega menu (desktop only) */
+.mega-promo {
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--kg-navy-900);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.875rem;
+}
+.mega-promo .eyebrow { color: var(--kg-gold-500); font-size: 0.7rem; }
+.mega-promo-title {
+  font-family: var(--kg-font-heading);
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: #fff;
+}
+.mega-promo-title span { color: var(--kg-gold-500); }
+
+.mega-all {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+@media (min-width: 1200px) {
+  /* The Services <li> is position-static, so the menu is positioned against
+     the whole navbar and can stretch from its left edge to its right edge. */
+  .site-navbar .mega-menu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 0;
+    padding: 1.75rem 0;
+    border: 0;
+    border-radius: 0 0 0.75rem 0.75rem;
+    box-shadow: var(--kg-shadow);
+  }
+}
+
+/* ---------- 7. Mobile menu (offcanvas, below 1200px): navy panel ---------- */
+.site-navbar .offcanvas {
+  --bs-offcanvas-width: 330px;
+  --bs-offcanvas-bg: var(--kg-navy-900);
+  --bs-offcanvas-color: rgba(255, 255, 255, 0.85);
+}
+.site-navbar .offcanvas-header {
+  border-bottom: 3px solid var(--kg-gold-500);
+}
+
+@media (max-width: 1199.98px) {
+  .site-navbar .offcanvas-body .nav-link {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* Dropdowns open inline, like an accordion */
+  .site-navbar .offcanvas-body .dropdown-menu {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0.5rem 0 0.75rem;
+    background: transparent;
+  }
+  .site-navbar .dropdown-item {
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.375rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .site-navbar .dropdown-item:hover,
+  .site-navbar .dropdown-item:focus {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--kg-gold-500);
+  }
+
+  /* Mega menu content, recolored for the navy panel */
+  .site-navbar .mega-menu .container { padding: 0; }
+  .site-navbar .mega-menu .row { --bs-gutter-y: 1rem; }
+  .mega-heading { color: var(--kg-gold-500); border-bottom-color: rgba(255, 255, 255, 0.12); }
+  .mega-title { color: #fff; }
+  .mega-desc { color: rgba(255, 255, 255, 0.6); }
+  .mega-link:hover,
+  .mega-link:focus-visible { background: rgba(255, 255, 255, 0.06); }
+  .mega-all { color: var(--kg-gold-500); }
+}
+
+/* ---------- 8. Sections & headings ---------- */
+.section { padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
+.section-soft { background: var(--kg-bg-soft); }
+.section-navy {
+  background: var(--kg-navy-900);
+  color: rgba(255, 255, 255, 0.8);
+}
+.section-navy h2,
+.section-navy h3 { color: #fff; }
+.section-navy .heading-accent span,
+.section-navy .eyebrow { color: var(--kg-gold-500); }
+
+.section-head { max-width: 780px; margin-bottom: 2.75rem; }
+.section-head.text-center { margin-inline: auto; }
+
+/* Eyebrow gets a short gold line in front of it */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--kg-navy-600);
+}
+.eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 2px;
+  background: var(--kg-gold-500);
+}
+
+/* Phones: centred eyebrows often wrap to 2 lines, so drop the little line there */
+@media (max-width: 575.98px) {
+  .text-center .eyebrow::before { display: none; }
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+.sub-title {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  text-transform: uppercase;
+}
+.section-sub { color: var(--kg-text-muted); font-size: 1.05rem; margin-bottom: 0; }
+.section-navy .section-sub { color: rgba(255, 255, 255, 0.7); }
+
+/* Letter-spaced tagline, like "INTEGRATED SOLUTIONS | RELIABLE EXECUTION" in the PDF */
+.tagline-spaced {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--kg-text);
+}
+
+/* Paragraph block with a gold line on the left (intro text in every PDF slide) */
+.lead-border {
+  border-left: 3px solid var(--kg-gold-500);
+  padding-left: 1.25rem;
+}
+.lead-border p:last-child { margin-bottom: 0; }
+
+/* Italic side quote ("People Driving Possibilities") */
+.side-quote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  color: var(--kg-navy-950);
+  border-left: 3px solid var(--kg-gold-500);
+  padding-left: 1rem;
+}
+
+/* Round navy icon with gold ring (the icon style used all over the PDF) */
+.icon-ring {
+  flex: 0 0 auto;
+  width: 3.25rem;
+  height: 3.25rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--kg-navy-900);
+  border: 2px solid var(--kg-gold-500);
+  box-shadow: 0 0 0 4px rgba(235, 164, 11, 0.15);
+  color: var(--kg-gold-500);
+  font-size: 1.25rem;
+}
+.icon-ring-sm { width: 2.6rem; height: 2.6rem; font-size: 1rem; }
+.icon-ring-lg { width: 4rem; height: 4rem; font-size: 1.6rem; }
+
+/* Gold-outline icon on white (value proposition strips) */
+.icon-outline {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--kg-gold-500);
+  color: var(--kg-gold-600);
+  font-size: 1.1rem;
+}
+
+/* Simple list with gold check icons */
+.check-list { list-style: none; padding: 0; margin: 0; }
+.check-list li {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+}
+.check-list i { color: var(--kg-gold-600); margin-top: 0.15rem; }
+
+/* ---------- 9. Image placeholders ----------
+   <div class="media" data-img="assets/images/x.jpg"> shows a navy block with an icon.
+   main.js checks whether the image file exists; if it does, it becomes the background
+   and the placeholder bits disappear. So: drop the real photo in assets/images, done. */
+.media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background-color: var(--kg-navy-900);
+  background-image: linear-gradient(135deg, var(--kg-navy-900), var(--kg-navy-700));
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+.media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0 2px, transparent 2px 18px);
+}
+.media-icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: rgba(235, 164, 11, 0.55);
+}
+.media-label {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.media.has-img::before,
+.media.has-img .media-icon,
+.media.has-img .media-label { display: none; }
+/* On service cards the round icon sits bottom-left, so the label goes right */
+.service-card .media-label { left: auto; right: 0.75rem; }
+
+.media-16x9 { aspect-ratio: 16 / 9; }
+.media-4x3 { aspect-ratio: 4 / 3; }
+.media-3x4 { aspect-ratio: 3 / 4; }
+
+/* Slanted image edge with a gold stripe (the diagonal gold lines of the PDF), desktop only */
+@media (min-width: 992px) {
+  .slant-frame { position: relative; }
+  .slant-frame .media-slant {
+    clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+    border-radius: 0 0.75rem 0.75rem 0;
+  }
+  .slant-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--kg-gold-500);
+    clip-path: polygon(14% 0, calc(14% + 7px) 0, 7px 100%, 0 100%);
+    transform: translateX(-16px);
+  }
+}
+
+/* ---------- 10. Hero carousel (home) ---------- */
+.hero .carousel-item { min-height: clamp(540px, 80vh, 680px); }
+.hero-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: inherit;
+  padding: 4.5rem 0 6rem;
+  overflow: hidden;
+  background-color: var(--kg-navy-900);
+  /* Shown until a real hero photo is added */
+  background-image:
+    radial-gradient(circle at 78% 35%, rgba(3, 69, 141, 0.6), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 22px);
+  background-size: cover;
+  background-position: center;
+  color: rgba(255, 255, 255, 0.85);
+}
+/* Dark overlay keeps the text readable on top of any photo */
+.hero-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 28, 58, 0.82);
+}
+.hero-art {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(9rem, 20vw, 17rem);
+  line-height: 1;
+  color: rgba(235, 164, 11, 0.14);
+  display: none;
+}
+.hero-slide.has-img .hero-art { display: none !important; }
+.hero-content { position: relative; z-index: 2; max-width: 660px; }
+.hero .eyebrow { color: var(--kg-gold-500); }
+.hero-title {
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.hero-title span { color: var(--kg-gold-500); }
+.hero-text { font-size: 1.1rem; max-width: 34rem; margin-bottom: 2rem; }
+
+@media (min-width: 992px) {
+  .hero-slide::before {
+    background: linear-gradient(90deg, rgba(1, 28, 58, 0.97) 0%, rgba(1, 28, 58, 0.9) 40%,
+                rgba(1, 28, 58, 0.5) 68%, rgba(1, 28, 58, 0.2) 100%);
+  }
+  /* Gold diagonal stripe */
+  .hero-slide::after {
+    content: "";
+    position: absolute;
+    top: -10%;
+    bottom: -10%;
+    left: 60%;
+    width: 10px;
+    background: var(--kg-gold-500);
+    transform: skewX(-18deg);
+    opacity: 0.85;
+  }
+  .hero-art { display: block; }
+}
+
+.hero .carousel-indicators { margin-bottom: 1.75rem; z-index: 3; }
+.hero .carousel-indicators [data-bs-target] {
+  width: 28px;
+  height: 4px;
+  background-color: #fff;
+  opacity: 0.45;
+}
+.hero .carousel-indicators .active { background-color: var(--kg-gold-500); opacity: 1; }
+.hero .carousel-control-prev,
+.hero .carousel-control-next { width: 4.5rem; z-index: 3; }
+.hero-pause {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(1, 28, 58, 0.55);
+  color: #fff;
+}
+.hero-pause:hover,
+.hero-pause:focus-visible { background: var(--kg-gold-500); color: var(--kg-navy-950); border-color: var(--kg-gold-500); }
+
+/* ---------- 11. Page banner (top of inner pages) ---------- */
+.page-banner {
+  position: relative;
+  padding: clamp(3.5rem, 7vw, 5rem) 0;
+  overflow: hidden;
+  background-color: var(--kg-navy-900);
+  background-image:
+    radial-gradient(circle at 85% 20%, rgba(3, 69, 141, 0.7), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 22px);
+  background-size: cover;
+  background-position: center;
+  color: rgba(255, 255, 255, 0.85);
+}
+.page-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(1, 28, 58, 0.95) 0%, rgba(1, 28, 58, 0.75) 60%, rgba(1, 28, 58, 0.45) 100%);
+}
+.page-banner::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  right: 18%;
+  width: 8px;
+  background: var(--kg-gold-500);
+  transform: skewX(-18deg);
+  opacity: 0.8;
+}
+@media (min-width: 768px) {
+  .page-banner::after { display: block; }
+}
+.page-banner .container { position: relative; z-index: 1; }
+.page-banner h1 {
+  color: #fff;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.page-banner h1 span,
+.page-banner .eyebrow { color: var(--kg-gold-500); }
+.page-banner .lead { max-width: 44rem; }
+.page-banner .breadcrumb {
+  --bs-breadcrumb-divider-color: rgba(255, 255, 255, 0.5);
+  --bs-breadcrumb-item-active-color: var(--kg-gold-500);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.page-banner .breadcrumb a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+.page-banner .breadcrumb a:hover { color: var(--kg-gold-500); }
+
+/* ---------- 12. Who we are + strengths band ---------- */
+.highlight-list { list-style: none; padding: 0; margin: 0; }
+.highlight-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--kg-navy-950);
+}
+
+.band {
+  background: var(--kg-navy-900);
+  color: #fff;
+  padding: 2rem 0;
+  border-top: 3px solid var(--kg-gold-500);
+}
+.band-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+.band-item i { font-size: 2.1rem; color: var(--kg-gold-500); }
+.band-item span {
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+@media (min-width: 992px) {
+  .band .col + .col .band-item {
+    border-left: 1px solid rgba(235, 164, 11, 0.45);
+    padding-left: 1.5rem;
+  }
+}
+
+/* ---------- 13. Cards ---------- */
+/* Shared lift on hover */
+.lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.lift:hover { transform: translateY(-6px); box-shadow: var(--kg-shadow); }
+
+/* Service cards (home + services overview) */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--kg-line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(1, 28, 58, 0.06);
+  color: inherit;
+  text-decoration: none;
+}
+.service-card-media { position: relative; overflow: hidden; }
+.service-card-media .media { border-radius: 0; }
+.service-card:hover .media,
+.service-card:focus-visible .media { transform: scale(1.05); }
+.service-num {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.375rem;
+  background: var(--kg-gold-500);
+  color: var(--kg-navy-950);
+  font-family: var(--kg-font-heading);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.service-card-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 1.5rem 1.5rem;
+}
+.service-card-body .icon-ring { margin-top: -1.6rem; margin-bottom: 1rem; }
+.service-card h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+.service-card p { color: var(--kg-text-muted); font-size: 0.92rem; }
+.service-card .more {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--kg-navy-600);
+}
+.service-card .more i { display: inline-block; transition: transform 0.2s ease; }
+.service-card:hover .more i { transform: translateX(4px); }
+
+/* Value cards (gold left border, like "Why choose" in the reference) */
+.value-card {
+  height: 100%;
+  padding: 1.75rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--kg-line);
+  border-left: 4px solid var(--kg-gold-500);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 18px rgba(1, 28, 58, 0.05);
+}
+.value-card h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 1rem 0 0.4rem;
+}
+.value-card p { color: var(--kg-text-muted); font-size: 0.92rem; margin: 0; }
+
+/* Capability cards: navy header with gold number, like the PDF */
+.cap-card {
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--kg-line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(1, 28, 58, 0.06);
+}
+.cap-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  background: var(--kg-navy-900);
+}
+.cap-num {
+  font-family: var(--kg-font-heading);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--kg-gold-500);
+}
+.cap-card-head h4 {
+  flex: 1;
+  margin: 0;
+  font-family: var(--kg-font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: #fff;
+}
+.cap-list {
+  list-style: none;
+  margin: 0;
+  padding: 1.25rem 1.25rem 1.4rem;
+}
+.cap-list li {
+  position: relative;
+  padding: 0.3rem 0 0.3rem 1.1rem;
+  font-size: 0.9rem;
+  color: var(--kg-text-muted);
+}
+.cap-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--kg-gold-500);
+}
+
+/* ---------- 14. Sectors, workflow, certifications ---------- */
+.sector {
+  display: block;
+  width: 130px;
+  text-align: center;
+  text-decoration: none;
+}
+.sector-circle {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 0.85rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--kg-navy-900);
+  border: 3px solid var(--kg-gold-500);
+  box-shadow: 0 0 0 6px rgba(235, 164, 11, 0.15);
+  color: var(--kg-gold-500);
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+.sector:hover .sector-circle,
+.sector:focus-visible .sector-circle { transform: scale(1.08); }
+.sector-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  line-height: 1.3;
+  color: var(--kg-navy-950);
+}
+@media (max-width: 575.98px) {
+  .sector { width: 104px; }
+  .sector-circle { width: 76px; height: 76px; font-size: 1.6rem; }
+}
+
+.step {
+  position: relative;
+  height: 100%;
+  padding: 1.5rem 0.75rem;
+  text-align: center;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.step-num {
+  display: block;
+  font-family: var(--kg-font-heading);
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--kg-gold-500);
+}
+.step .icon-ring { margin: 0.85rem auto; }
+.step-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  line-height: 1.3;
+  color: #fff;
+}
+/* All 8 steps on one line from 1200px.
+   Bootstrap's row-cols-* only goes up to 6, so 8 columns need our own width. */
+@media (min-width: 1200px) {
+  .workflow > .col { flex: 0 0 auto; width: 12.5%; }
+  /* Gold arrow between steps */
+  .workflow > .col:not(:last-child) .step::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -13px;
+    z-index: 2;
+    border: 7px solid transparent;
+    border-left-color: var(--kg-gold-500);
+    transform: translateY(-50%);
+  }
+}
+
+.cert { text-align: center; }
+.cert-badge {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 0.85rem;
+  display: grid;
+  place-items: center;
+  align-content: center; /* keep "ISO" and the number together in the middle */
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--kg-gold-500);
+  box-shadow: 0 6px 18px rgba(1, 28, 58, 0.08);
+  font-family: var(--kg-font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.05;
+  color: var(--kg-navy-900);
+}
+.cert-badge small { display: block; margin-top: 0.15rem; font-size: 0.62rem; letter-spacing: 0.02em; color: var(--kg-gold-600); }
+.cert-badge i { font-size: 2rem; color: var(--kg-navy-900); }
+.cert-title { font-weight: 700; color: var(--kg-navy-950); font-size: 0.92rem; margin-bottom: 0.15rem; }
+.cert-sub { font-size: 0.8rem; color: var(--kg-text-muted); margin: 0; }
+
+/* ---------- 15. Service sections (services page) ---------- */
+.jump-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  height: 100%;
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid var(--kg-line);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.jump-card:hover,
+.jump-card:focus-visible {
+  border-color: var(--kg-gold-500);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(1, 28, 58, 0.1);
+}
+.jump-card-num {
+  font-family: var(--kg-font-heading);
+  font-weight: 800;
+  color: var(--kg-gold-600);
+  font-size: 0.85rem;
+}
+.jump-card-title { display: block; font-weight: 600; color: var(--kg-navy-950); line-height: 1.3; }
+
+/* Navy "Our Approach" panel */
+.approach {
+  height: 100%;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background: var(--kg-navy-900);
+  color: rgba(255, 255, 255, 0.75);
+}
+.approach h3 { color: #fff; }
+.approach h3 span { color: var(--kg-gold-500); }
+.approach-item { display: flex; gap: 1rem; }
+.approach-item h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+.approach-item p { font-size: 0.88rem; margin: 0; }
+
+/* Light information panel (approvals, regulations, standards) */
+.info-panel {
+  height: 100%;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background: var(--kg-bg-soft);
+  border: 1px solid var(--kg-line);
+}
+.info-panel .note { font-size: 0.8rem; font-style: italic; color: var(--kg-text-muted); margin: 1rem 0 0; }
+
+/* "Our Value Proposition" strip */
+.value-strip {
+  padding: 1.5rem;
+  border: 1px solid rgba(235, 164, 11, 0.55);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+.value-strip-label {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--kg-font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--kg-navy-950);
+}
+/* "Our Value" navy + "Proposition" gold, like the PDF */
+.value-strip-label .vsl-text { color: var(--kg-navy-950); }
+.value-strip-label .vsl-text span { color: var(--kg-gold-600); }
+.vp-item { display: flex; gap: 0.75rem; }
+.vp-title {
+  margin: 0 0 0.15rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--kg-navy-950);
+}
+.vp-text { margin: 0; font-size: 0.82rem; line-height: 1.4; color: var(--kg-text-muted); }
+
+/* Navy strip of sectors at the bottom of a service */
+.sector-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 2rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--kg-navy-900);
+}
+.sector-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.sector-strip i { font-size: 1.2rem; color: var(--kg-gold-500); }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---------- 16. Leadership ---------- */
+.leader-card {
+  height: 100%;
+  padding: 1.75rem;
+  background: #fff;
+  border: 1px solid var(--kg-line);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 18px rgba(1, 28, 58, 0.06);
+}
+.leader-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.leader-name { margin: 0; font-size: 1.2rem; text-transform: uppercase; }
+.leader-role { margin: 0.2rem 0 0; font-size: 0.86rem; font-weight: 600; color: var(--kg-navy-600); line-height: 1.35; }
+.leader-tag {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.25rem;
+  background: var(--kg-gold-500);
+  color: var(--kg-navy-950);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.leader-facts { margin: 0; }
+.leader-facts dt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--kg-navy-950);
+}
+.leader-facts dt i { color: var(--kg-gold-600); }
+.leader-facts dd { margin: 0.2rem 0 0.9rem 1.55rem; font-size: 0.88rem; color: var(--kg-text-muted); }
+.leader-facts dd:last-child { margin-bottom: 0; }
+
+/* Dark version (the two bottom cards in the PDF) */
+.leader-card-dark {
+  background: var(--kg-navy-900);
+  border-color: transparent;
+}
+.leader-card-dark .leader-name,
+.leader-card-dark .leader-facts dt { color: #fff; }
+.leader-card-dark .leader-role { color: var(--kg-gold-300); }
+.leader-card-dark .leader-facts dt i { color: var(--kg-gold-500); }
+.leader-card-dark .leader-facts dd { color: rgba(255, 255, 255, 0.72); }
+
+/* ---------- 17. Clients ---------- */
+.org-group {
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--kg-line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.org-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  background: var(--kg-navy-900);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.org-group-head i { color: var(--kg-gold-500); font-size: 1.2rem; }
+.org-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 1.25rem; margin: 0; list-style: none; }
+.org-chip,
+.org-pill {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--kg-line);
+  border-radius: 0.5rem;
+  background: var(--kg-bg-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--kg-navy-950);
+  white-space: nowrap;
+}
+.org-pill { border-radius: 50rem; background: #fff; padding: 0.6rem 1.3rem; }
+
+.gov-tile {
+  height: 100%;
+  padding: 1.25rem 0.75rem;
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(235, 164, 11, 0.5);
+  border-radius: 0.75rem;
+}
+.gov-abbr { display: block; font-family: var(--kg-font-heading); font-weight: 800; font-size: 1.05rem; color: var(--kg-navy-950); }
+.gov-name { display: block; margin-top: 0.35rem; font-size: 0.75rem; line-height: 1.35; color: var(--kg-text-muted); }
+
+/* Scrolling row of names (home "experience" + footer taglines) */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  padding: 0.25rem 0;
+  list-style: none;
+  margin: 0;
+  animation: kg-marquee 45s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes kg-marquee {
+  to { transform: translateX(calc(-50% - 0.5rem)); }
+}
+
+/* ---------- 18. Contact ---------- */
+.contact-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid var(--kg-line);
+  border-radius: 0.75rem;
+}
+.contact-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.contact-card p,
+.contact-card a { margin: 0; font-size: 0.95rem; }
+.contact-card a { text-decoration: none; font-weight: 600; }
+
+.map-frame {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 0;
+  border-radius: 0.75rem;
+}
+.legal-card {
+  height: 100%;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-radius: 0.75rem;
+  background: var(--kg-navy-900);
+  color: #fff;
+}
+.legal-card i { font-size: 1.75rem; color: var(--kg-gold-500); }
+.legal-label {
+  display: block;
+  margin: 0.6rem 0 0.25rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+.legal-value { display: block; font-weight: 600; word-break: break-word; }
+
+/* ---------- 19. Forms (enquiry popup + contact page) ---------- */
+.form-card {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: #fff;
+  border-top: 4px solid var(--kg-gold-500);
+  border-radius: 0.75rem;
+  box-shadow: var(--kg-shadow);
+}
+.form-label { font-size: 0.88rem; font-weight: 600; color: var(--kg-navy-950); }
+.req { color: #b02a37; }
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: var(--kg-navy-600);
+  box-shadow: 0 0 0 0.25rem rgba(235, 164, 11, 0.35);
+}
+.form-check-input:checked { background-color: var(--kg-navy-900); border-color: var(--kg-navy-900); }
+.form-success { display: none; }
+.form-success.is-visible { display: block; }
+
+.quote-modal .modal-content { border: 0; border-radius: 0.75rem; overflow: hidden; }
+.quote-modal .modal-header {
+  align-items: flex-start;
+  background: var(--kg-gradient-header);
+  border-bottom: 3px solid var(--kg-gold-500);
+  color: #fff;
+}
+.quote-modal .modal-title { color: #fff; text-transform: uppercase; }
+.quote-modal .eyebrow { color: var(--kg-gold-500); font-size: 0.7rem; }
+
+/* ---------- 20. Call-to-action band ---------- */
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
+  background: var(--kg-gradient-header);
+  color: rgba(255, 255, 255, 0.82);
+}
+.cta-band::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  right: 30%;
+  width: 8px;
+  background: var(--kg-gold-500);
+  transform: skewX(-18deg);
+  opacity: 0.35;
+}
+@media (min-width: 992px) {
+  .cta-band::after { display: block; }
+}
+.cta-band .container { position: relative; z-index: 1; }
+.cta-band h2 { color: #fff; }
+.cta-band h2 span,
+.cta-band .eyebrow { color: var(--kg-gold-500); }
+
+/* ---------- 21. Footer ---------- */
+.site-footer {
+  background: var(--kg-navy-900);
+  border-top: 4px solid var(--kg-gold-500);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+}
+.footer-main { padding: 4rem 0 3rem; }
+.footer-logo { height: 64px; width: auto; }
+.footer-heading {
+  position: relative;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  font-family: var(--kg-font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--kg-gold-500);
+}
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: 0.55rem; }
+.site-footer a {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.site-footer a:hover,
+.site-footer a:focus-visible { color: var(--kg-gold-500); }
+.footer-contact { list-style: none; padding: 0; margin: 0; }
+.footer-contact li { display: flex; gap: 0.75rem; margin-bottom: 0.9rem; }
+.footer-contact i { color: var(--kg-gold-500); font-size: 1.05rem; margin-top: 0.1rem; }
+.footer-certs li {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(235, 164, 11, 0.5);
+  border-radius: 50rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+}
+.footer-marquee {
+  padding: 0.55rem 0;
+  background: var(--kg-gold-500);
+  color: var(--kg-navy-950);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.footer-marquee .marquee-track { gap: 2.5rem; animation-duration: 35s; }
+.footer-marquee li { white-space: nowrap; }
+.footer-marquee li::after { content: "\2022"; margin-left: 2.5rem; color: var(--kg-navy-700); }
+.footer-bottom {
+  padding: 1rem 0;
+  background: var(--kg-navy-950);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- 22. Floating buttons (WhatsApp, quote, back to top) ---------- */
+.float-actions {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1030;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.float-btn {
+  position: relative;
+  width: 3.1rem;
+  height: 3.1rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(1, 28, 58, 0.3);
+  font-size: 1.35rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.25s ease, visibility 0.25s ease;
+}
+.float-btn:hover,
+.float-btn:focus-visible { transform: scale(1.08); }
+.float-whatsapp { background: #128c7e; color: #fff; }
+.float-whatsapp:hover { color: #fff; }
+.float-quote { background: var(--kg-gold-500); color: var(--kg-navy-950); }
+.float-top {
+  background: var(--kg-navy-900);
+  color: var(--kg-gold-500);
+  border: 1px solid rgba(235, 164, 11, 0.6);
+  opacity: 0;
+  visibility: hidden;
+}
+.float-top.is-visible { opacity: 1; visibility: visible; }
+
+/* Label that slides out on hover (mouse devices only) */
+@media (hover: hover) {
+  .float-btn::before {
+    content: attr(data-label);
+    position: absolute;
+    right: calc(100% + 0.6rem);
+    padding: 0.35rem 0.7rem;
+    border-radius: 0.375rem;
+    background: var(--kg-navy-950);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+  }
+  .float-btn:hover::before,
+  .float-btn:focus-visible::before { opacity: 1; transform: none; }
+}
+
+/* ---------- 23. Reduced motion: no scrolling marquees or movement ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { -webkit-mask-image: none; mask-image: none; }
+  .marquee-track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .marquee-track [aria-hidden="true"] { display: none; }
+  .lift,
+  .media,
+  .sector-circle,
+  .float-btn,
+  .jump-card { transition: none; }
+}

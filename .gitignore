@@ -1,0 +1,13 @@
+# OS / editor files
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+*.swp
+
+# Python cache from running tools/gen_site.py
+__pycache__/
+*.pyc
+
+# Local zips made for delivery
+*.zip

@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | KALAGNI Integrated Projects</title>
+  <meta name="description" content="Who we are, our values and the leadership team behind KALAGNI Integrated Projects Private Limited, Hyderabad.">
+  <meta name="theme-color" content="#011c3a">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+
+  <!-- 1. Bootstrap CSS, then Bootstrap Icons (local copies) -->
+  <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- 2. Our own CSS (after Bootstrap, so our styles win) -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a class="skip-link visually-hidden-focusable" href="#main">Skip to main content</a>
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="topbar">
+    <div class="container d-flex align-items-center justify-content-center justify-content-lg-between gap-3 py-2">
+      <p class="topbar-tagline mb-0 d-none d-lg-block">Integrated Engineering. Reliable Execution.</p>
+      <ul class="list-unstyled d-flex align-items-center gap-3 gap-md-4 mb-0">
+        <li><a href="tel:+919912485530"><i class="bi bi-telephone-fill" aria-hidden="true"></i>+91 9912485530</a></li>
+        <li class="d-none d-sm-block"><a href="mailto:info@kalagni.co.in"><i class="bi bi-envelope-fill" aria-hidden="true"></i>info@kalagni.co.in</a></li>
+        <li class="d-none d-md-block"><i class="bi bi-patch-check-fill" aria-hidden="true"></i>ISO 9001 · 14001 · 45001</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR =================
+       navbar-expand-xl : full menu from 1200px, hamburger below
+       sticky-top       : stays at the top while scrolling
+       offcanvas-start  : on mobile the menu slides in from the left -->
+  <nav class="navbar navbar-expand-xl site-navbar sticky-top" aria-label="Main navigation">
+    <div class="container">
+
+      <a class="navbar-brand brand" href="../index.html">
+        <img class="brand-logo" src="../assets/images/logo-white.png" alt="KALAGNI Integrated Projects Private Limited" width="574" height="185">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-label="Open menu">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel">
+
+        <!-- Only visible on mobile (Bootstrap hides it from 1200px) -->
+        <div class="offcanvas-header">
+          <img class="brand-logo" id="mainNavLabel" src="../assets/images/logo-white.png" alt="KALAGNI menu" width="574" height="185">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        </div>
+
+        <div class="offcanvas-body align-items-xl-center">
+          <ul class="navbar-nav flex-grow-1 justify-content-xl-center">
+
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+
+            <!-- Menu order follows the visitor: what you do -> proof -> who you are -> contact -->
+
+            <!-- Services: MEGA MENU. "position-static" lets the menu stretch across the whole navbar -->
+            <li class="nav-item dropdown position-static">
+              <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+              <div class="dropdown-menu mega-menu">
+                <div class="container">
+                  <div class="row g-4">
+
+                    <div class="col-xl-3">
+                      <p class="mega-heading">Power &amp; Energy</p>
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="mega-link" href="services.html#electrical">
+                            <span class="mega-icon"><i class="bi bi-lightning-charge" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Electrical Power Infrastructure</span><span class="mega-desc">Substations, HT/LT systems, cable networks</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="services.html#solar-bess">
+                            <span class="mega-icon"><i class="bi bi-sun" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Solar &amp; BESS Solutions</span><span class="mega-desc">Solar PV, battery storage, grid connection</span></span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-xl-3">
+                      <p class="mega-heading">Buildings &amp; Infrastructure</p>
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="mega-link" href="services.html#infrastructure">
+                            <span class="mega-icon"><i class="bi bi-buildings" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Infrastructure &amp; Construction</span><span class="mega-desc">Industrial, commercial &amp; residential</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="services.html#mepf">
+                            <span class="mega-icon"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">MEPF Engineering</span><span class="mega-desc">Mechanical, electrical, plumbing &amp; fire</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="services.html#hvac">
+                            <span class="mega-icon"><i class="bi bi-fan" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">HVAC Systems</span><span class="mega-desc">VRF, chillers, clean rooms, precision cooling</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="services.html#railway-metro">
+                            <span class="mega-icon"><i class="bi bi-train-front" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Railway &amp; Metro Infrastructure</span><span class="mega-desc">Electrification, metro &amp; trackside works</span></span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-xl-3">
+                      <p class="mega-heading">Engineering &amp; Support</p>
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="mega-link" href="services.html#digital">
+                            <span class="mega-icon"><i class="bi bi-cpu" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Engineering &amp; Digital Solutions</span><span class="mega-desc">ETAP, BIM, SCADA / IoT, AI-enabled</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="services.html#approvals">
+                            <span class="mega-icon"><i class="bi bi-clipboard-check" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Approvals &amp; Project Delivery</span><span class="mega-desc">Statutory approvals &amp; utility coordination</span></span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="mega-link" href="services.html#om">
+                            <span class="mega-icon"><i class="bi bi-tools" aria-hidden="true"></i></span>
+                            <span><span class="mega-title">Operations &amp; Maintenance</span><span class="mega-desc">Preventive maintenance, AMC &amp; monitoring</span></span>
+                          </a>
+                        </li>
+                      </ul>
+                      <a class="mega-all d-xl-none" href="services.html">View all services <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+
+                    <!-- Promo card: desktop only -->
+                    <div class="col-xl-3 d-none d-xl-block">
+                      <div class="mega-promo">
+                        <p class="eyebrow">From concept to commissioning</p>
+                        <p class="mega-promo-title">Integrated <span>EPC Solutions</span></p>
+                        <p>One partner for engineering, approvals, execution and lifecycle support.</p>
+                        <a class="btn btn-gold btn-sm" href="services.html">View all services <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="clients.html">Clients</a>
+            </li>
+
+            <!-- About: small dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="about.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="about.html#who-we-are">Who We Are</a></li>
+                <li><a class="dropdown-item" href="about.html#values">Our Values</a></li>
+                <li><a class="dropdown-item" href="about.html#leadership">Leadership Team</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Action buttons: stacked in the mobile menu, side by side on desktop -->
+          <div class="d-flex flex-column flex-xl-row gap-2 mt-4 mt-xl-0 ms-xl-3">
+            <a class="btn btn-outline-gold btn-pill btn-sm px-3" href="../assets/docs/kalagni-profile.pdf" download>
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Company Profile
+            </a>
+            <button type="button" class="btn btn-gold btn-pill btn-sm px-3" data-bs-toggle="modal" data-bs-target="#quoteModal">
+              <i class="bi bi-send" aria-hidden="true"></i> Get a Quote
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ================= PAGE BANNER ================= -->
+    <section class="page-banner" data-img="../assets/images/banner-about.jpg">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">About</li>
+          </ol>
+        </nav>
+        <p class="eyebrow">Integrated solutions | Reliable execution</p>
+        <h1>About <span>KALAGNI</span></h1>
+        <p class="lead mb-0">An integrated EPC contractor with a multi-disciplinary team, taking projects from concept to commissioning.</p>
+      </div>
+    </section>
+
+    <!-- ================= WHO WE ARE ================= -->
+    <section class="section" id="who-we-are" aria-labelledby="who-title">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5">
+            <p class="eyebrow">Who we are</p>
+            <h2 class="section-title heading-accent" id="who-title">Who <span>We Are</span></h2>
+            <p class="tagline-spaced mb-4">Integrated Solutions | Reliable Execution</p>
+            <div class="lead-border">
+              <p>KALAGNI Integrated Projects Private Limited is an integrated EPC contractor delivering end-to-end solutions across Power, Infrastructure, MEPF, HVAC and Digital Engineering. We bring together engineering expertise, execution excellence and project management discipline to deliver reliable, sustainable and future-ready infrastructure for our clients.</p>
+              <p>With a multi-disciplinary team and a collaborative approach, we take projects from concept to commissioning, ensuring quality, safety, on-time delivery and long-term value.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <ul class="highlight-list">
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-gear" aria-hidden="true"></i></span>Integrated EPC Capabilities</li>
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-shield-check" aria-hidden="true"></i></span>Quality, Safety &amp; Compliance</li>
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-people" aria-hidden="true"></i></span>Experienced Leadership Team</li>
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>Client-Focused Execution</li>
+              <li><span class="icon-ring icon-ring-sm"><i class="bi bi-tree" aria-hidden="true"></i></span>Sustainable Growth</li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="slant-frame"><div class="media media-4x3 media-slant" data-img="../assets/images/about.jpg" role="img" aria-label="KALAGNI office building"><span class="media-icon"><i class="bi bi-buildings" aria-hidden="true"></i></span><span class="media-label">about.jpg</span></div></div>
+            <p class="side-quote mt-4 mb-0">People Driving Possibilities</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STRENGTHS BAND ================= -->
+    <section class="band" aria-label="Our strengths">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+          <div class="col"><div class="band-item"><i class="bi bi-cone-striped" aria-hidden="true"></i><span>Multi-Disciplinary Expertise</span></div></div>
+          <div class="col"><div class="band-item"><i class="bi bi-bullseye" aria-hidden="true"></i><span>End-to-End Project Delivery</span></div></div>
+          <div class="col"><div class="band-item"><i class="bi bi-people-fill" aria-hidden="true"></i><span>Client-Centric Approach</span></div></div>
+          <div class="col"><div class="band-item"><i class="bi bi-tree-fill" aria-hidden="true"></i><span>Commitment to Sustainability</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LEADERSHIP ================= -->
+    <section class="section" id="leadership" aria-labelledby="leadership-title">
+      <div class="container">
+        <div class="section-head text-center">
+          <p class="eyebrow">Experience | Engineering | Execution</p>
+          <h2 class="section-title heading-accent" id="leadership-title">Leadership <span>Team</span></h2>
+          <p class="section-sub">Our leadership combines deep technical expertise with proven engineering, construction, infrastructure and technology experience in private and government projects.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <article class="leader-card lift">
+              <div class="leader-head"><span class="icon-ring icon-ring-lg"><i class="bi bi-gear" aria-hidden="true"></i></span>
+                <div><h3 class="leader-name">Chethan Kumar</h3><p class="leader-role">Director, Engineering &amp; Technical Solutions</p></div></div>
+              <span class="leader-tag">The Technical Solutions Leader</span>
+              <dl class="leader-facts">
+                <dt><i class="bi bi-mortarboard" aria-hidden="true"></i>Education</dt><dd>Graduate in Electrical Engineering</dd>
+                <dt><i class="bi bi-briefcase" aria-hidden="true"></i>Professional Experience</dt><dd>10+ years as a Senior Design Engineer. Experience with GE Vernova, ABB and Siemens in engineering design and EPC project delivery.</dd>
+                <dt><i class="bi bi-bullseye" aria-hidden="true"></i>At KALAGNI</dt><dd>Oversees engineering coordination, technical solutions, design delivery and quality assurance.</dd>
+              </dl>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="leader-card lift">
+              <div class="leader-head"><span class="icon-ring icon-ring-lg"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
+                <div><h3 class="leader-name">Manikanta Jillagoni</h3><p class="leader-role">Founder | Director, Operations &amp; Business Support</p></div></div>
+              <span class="leader-tag">The Vision &amp; Operations Driver</span>
+              <dl class="leader-facts">
+                <dt><i class="bi bi-mortarboard" aria-hidden="true"></i>Education</dt><dd>Graduate in Electrical and Electronics Engineering</dd>
+                <dt><i class="bi bi-briefcase" aria-hidden="true"></i>Professional Experience</dt><dd>Operations-led leader with experience in strategy, business development, government liaison, client relationships and power infrastructure. Connects technical planning with field execution.</dd>
+                <dt><i class="bi bi-bullseye" aria-hidden="true"></i>At KALAGNI</dt><dd>Leads overall operations, business support, government liaison, client management, tender leadership and integrated EPC growth.</dd>
+              </dl>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="leader-card lift">
+              <div class="leader-head"><span class="icon-ring icon-ring-lg"><i class="bi bi-cone-striped" aria-hidden="true"></i></span>
+                <div><h3 class="leader-name">Vinay Kumar Reddy</h3><p class="leader-role">Director, Project Execution &amp; Infrastructure</p></div></div>
+              <span class="leader-tag">The Project Delivery Leader</span>
+              <dl class="leader-facts">
+                <dt><i class="bi bi-mortarboard" aria-hidden="true"></i>Education</dt><dd>Graduate in Mechanical Engineering</dd>
+                <dt><i class="bi bi-briefcase" aria-hidden="true"></i>Professional Experience</dt><dd>7+ years in execution of electrical, civil and MEPF works. Hands-on experience in project planning, site execution and handover.</dd>
+                <dt><i class="bi bi-bullseye" aria-hidden="true"></i>At KALAGNI</dt><dd>Responsible for project planning, site execution, quality control, safety and timely project delivery.</dd>
+              </dl>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <article class="leader-card leader-card-dark lift">
+              <div class="leader-head"><span class="icon-ring icon-ring-lg"><i class="bi bi-buildings" aria-hidden="true"></i></span>
+                <div><h3 class="leader-name">Aravind Reddy</h3><p class="leader-role">Executive Director | Engineering, Construction &amp; Infrastructure</p></div></div>
+              <span class="leader-tag">The Client &amp; Business Development Leader</span>
+              <dl class="leader-facts">
+                <dt><i class="bi bi-mortarboard" aria-hidden="true"></i>Education</dt><dd>Graduate in Electrical and Electronics Engineering</dd>
+                <dt><i class="bi bi-briefcase" aria-hidden="true"></i>Professional Experience</dt><dd>A veteran engineering professional with 25 years of experience spanning engineering, construction and infrastructure. Brings practical field knowledge to project planning, multidisciplinary coordination and delivery.</dd>
+                <dt><i class="bi bi-bullseye" aria-hidden="true"></i>At KALAGNI</dt><dd>Leads client engagement, business development and stakeholder coordination, aligning client requirements with project objectives and business growth opportunities.</dd>
+              </dl>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <!-- CONFIRM before publishing: name spelled 'Vinod Duram' here but 'Dr. Vinod Durgam' on the infrastructure slide; company 'Busikem Indian Construction' here but 'BrickCem Construction Private Limited' there. -->
+            <article class="leader-card leader-card-dark lift">
+              <div class="leader-head"><span class="icon-ring icon-ring-lg"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></span>
+                <div><h3 class="leader-name">Vinod Duram</h3><p class="leader-role">Executive Director | Corporate Strategy &amp; Finance</p></div></div>
+              <span class="leader-tag">The Strategy, Finance &amp; Business Development Leader</span>
+              <dl class="leader-facts">
+                <dt><i class="bi bi-mortarboard" aria-hidden="true"></i>Education</dt><dd>Doctorate in Marketing</dd>
+                <dt><i class="bi bi-briefcase" aria-hidden="true"></i>Professional Experience</dt><dd>20+ years with TCS as Cluster Head &amp; Delivery Lead handling large-scale projects and business operations. 10+ years as owner of Busikem Indian Construction with expertise in construction and infrastructure.</dd>
+                <dt><i class="bi bi-bullseye" aria-hidden="true"></i>At KALAGNI</dt><dd>Leads financial planning, corporate governance, strategic partnerships and business development.</dd>
+              </dl>
+            </article>
+          </div>
+        </div>
+        <p class="tagline-spaced text-center mt-5 mb-0">Youth driven. Experience backed. <strong class="text-uppercase" style="color: var(--kg-gold-600)">KALAGNI.</strong></p>
+      </div>
+    </section>
+
+    <!-- ================= VALUES ================= -->
+    <section class="section section-soft" id="values" aria-labelledby="values-title">
+      <div class="container">
+        <div class="section-head text-center">
+          <p class="eyebrow">The foundation of everything we do</p>
+          <h2 class="section-title heading-accent" id="values-title">Our <span>Values</span></h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col"><article class="value-card lift"><span class="icon-ring"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
+            <h3>Safety First</h3><p>A safe workplace for our people, partners and communities.</p></article></div>
+          <div class="col"><article class="value-card lift"><span class="icon-ring"><i class="bi bi-patch-check" aria-hidden="true"></i></span>
+            <h3>Quality Driven</h3><p>Consistent quality in design, materials and execution.</p></article></div>
+          <div class="col"><article class="value-card lift"><span class="icon-ring"><i class="bi bi-people" aria-hidden="true"></i></span>
+            <h3>Integrity</h3><p>Transparent, ethical and responsible in all our actions.</p></article></div>
+          <div class="col"><article class="value-card lift"><span class="icon-ring"><i class="bi bi-lightbulb" aria-hidden="true"></i></span>
+            <h3>Innovation</h3><p>Adopting advanced technologies for smarter and more efficient solutions.</p></article></div>
+          <div class="col"><article class="value-card lift"><span class="icon-ring"><i class="bi bi-tree" aria-hidden="true"></i></span>
+            <h3>Sustainability</h3><p>Building for a cleaner, greener and more resilient tomorrow.</p></article></div>
+          <div class="col"><article class="value-card lift"><span class="icon-ring"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
+            <h3>Client Success</h3><p>Delivering long-term value through reliable execution and strong partnerships.</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CERTIFICATIONS ================= -->
+    <section class="section" aria-labelledby="certs-title">
+      <div class="container">
+        <div class="section-head text-center">
+          <p class="eyebrow">Quality · Environment · Safety</p>
+          <h2 class="section-title heading-accent" id="certs-title">Certifications &amp; <span>Compliance</span></h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
+          <div class="col"><div class="cert"><div class="cert-badge">ISO<small>9001:2015</small></div>
+            <p class="cert-title">ISO 9001:2015</p><p class="cert-sub">Quality Management</p></div></div>
+          <div class="col"><div class="cert"><div class="cert-badge">ISO<small>14001:2015</small></div>
+            <p class="cert-title">ISO 14001:2015</p><p class="cert-sub">Environmental Management</p></div></div>
+          <div class="col"><div class="cert"><div class="cert-badge">ISO<small>45001:2018</small></div>
+            <p class="cert-title">ISO 45001:2018</p><p class="cert-sub">Occupational Health &amp; Safety</p></div></div>
+          <div class="col"><div class="cert"><div class="cert-badge"><i class="bi bi-bank" aria-hidden="true"></i></div>
+            <p class="cert-title">MSME</p><p class="cert-sub">Registered</p></div></div>
+          <div class="col"><div class="cert"><div class="cert-badge"><i class="bi bi-clipboard-check" aria-hidden="true"></i></div>
+            <p class="cert-title">Statutory Compliances</p><p class="cert-sub">As applicable</p></div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <p class="eyebrow">Discuss · Partner · Plan · Execute · Grow</p>
+            <h2 class="section-title mb-2" id="cta-title">Let's Build a <span>Stronger Tomorrow</span> Together</h2>
+            <p class="mb-0">KALAGNI is ready to partner with clients, consultants and institutions to deliver reliable, future-ready infrastructure across power, renewable energy, buildings and beyond.</p>
+          </div>
+          <div class="col-lg-4 d-flex flex-wrap gap-2 justify-content-lg-end">
+            <button type="button" class="btn btn-gold btn-pill btn-lg" data-bs-toggle="modal" data-bs-target="#quoteModal"><i class="bi bi-send" aria-hidden="true"></i> Get a Quote</button>
+            <a class="btn btn-outline-gold btn-pill btn-lg" href="tel:+919912485530"><i class="bi bi-telephone" aria-hidden="true"></i> Call Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-md-6 col-xl-4">
+            <a href="../index.html" class="d-inline-block mb-3">
+              <img class="footer-logo" src="../assets/images/logo-white.png" alt="KALAGNI Integrated Projects Private Limited" width="574" height="185" loading="lazy">
+            </a>
+            <p>An integrated EPC contractor delivering end-to-end solutions across power, infrastructure, MEPF, HVAC and digital engineering, from concept to commissioning.</p>
+            <ul class="footer-certs list-unstyled d-flex flex-wrap gap-2 mb-0">
+              <li>ISO 9001:2015</li><li>ISO 14001:2015</li><li>ISO 45001:2018</li><li>MSME Registered</li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-xl-2">
+            <h2 class="footer-heading">Quick Links</h2>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="clients.html">Clients</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html#leadership">Leadership</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="../assets/docs/kalagni-profile.pdf" download>Company Profile (PDF)</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-xl-3">
+            <h2 class="footer-heading">Our Services</h2>
+            <ul class="footer-links">
+              <li><a href="services.html#electrical">Electrical Power Infrastructure</a></li>
+              <li><a href="services.html#solar-bess">Solar &amp; BESS Solutions</a></li>
+              <li><a href="services.html#infrastructure">Infrastructure &amp; Construction</a></li>
+              <li><a href="services.html#mepf">MEPF Engineering</a></li>
+              <li><a href="services.html#hvac">HVAC Systems</a></li>
+              <li><a href="services.html#railway-metro">Railway &amp; Metro Infrastructure</a></li>
+              <li><a href="services.html#digital">Engineering &amp; Digital Solutions</a></li>
+              <li><a href="services.html#approvals">Approvals &amp; Project Delivery</a></li>
+              <li><a href="services.html#om">Operations &amp; Maintenance</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 col-xl-3">
+            <h2 class="footer-heading">Get in Touch</h2>
+            <ul class="footer-contact">
+              <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i><span>Plot No. 59, Lumbini Avenue, Gachibowli, Serilingampally, K.V. Rangareddy, Telangana 500032, India</span></li>
+              <li><i class="bi bi-telephone-fill" aria-hidden="true"></i><a href="tel:+919912485530">+91 9912485530</a></li>
+              <li><i class="bi bi-envelope-fill" aria-hidden="true"></i><a href="mailto:info@kalagni.co.in">info@kalagni.co.in</a></li>
+              <li><i class="bi bi-whatsapp" aria-hidden="true"></i><a href="https://wa.me/919912485530" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrolling taglines (decorative, so hidden from screen readers) -->
+    <div class="footer-marquee marquee" aria-hidden="true">
+      <ul class="marquee-track">
+        <li>Integrated Engineering</li>
+        <li>Reliable Execution</li>
+        <li>From Concept to Commissioning</li>
+        <li>People. Places. Progress.</li>
+        <li>Powering a Brighter Tomorrow</li>
+        <li>Youth Driven. Experience Backed.</li>
+        <li>Integrated Engineering</li>
+        <li>Reliable Execution</li>
+        <li>From Concept to Commissioning</li>
+        <li>People. Places. Progress.</li>
+        <li>Powering a Brighter Tomorrow</li>
+        <li>Youth Driven. Experience Backed.</li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 text-center text-md-start">
+        <p class="mb-0">&copy; <span class="js-year">2026</span> KALAGNI Integrated Projects Private Limited. All rights reserved.</p>
+        <p class="mb-0">CIN: U42202TS2026PTC224342 · GSTIN: 36AANCK3239M1Z0</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING BUTTONS ================= -->
+  <div class="float-actions">
+    <a class="float-btn float-whatsapp" href="https://wa.me/919912485530" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-label="Chat on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+    <button type="button" class="float-btn float-quote" data-bs-toggle="modal" data-bs-target="#quoteModal" aria-label="Get a quote" data-label="Get a Quote"><i class="bi bi-send" aria-hidden="true"></i></button>
+    <button type="button" class="float-btn float-top js-back-to-top" aria-label="Back to top" data-label="Back to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
+  </div>
+
+  <!-- ================= ENQUIRY POPUP (MODAL) ================= -->
+  <div class="modal fade quote-modal" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow mb-1">Discuss · Partner · Plan</p>
+            <h2 class="modal-title h5 mb-0" id="quoteModalTitle">Request a Quote</h2>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-body-secondary">Tell us about your project and our team will get back to you. Prefer to talk? Call <a href="tel:+919912485530">+91 9912485530</a> or <a href="https://wa.me/919912485530" target="_blank" rel="noopener">message us on WhatsApp</a>.</p>
+          <form class="js-enquiry-form" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="q-name" class="form-label">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" class="form-control" id="q-name" name="name" autocomplete="name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="q-company" class="form-label">Company</label>
+              <input type="text" class="form-control" id="q-company" name="company" autocomplete="organization">
+            </div>
+            <div class="col-md-6">
+              <label for="q-email" class="form-label">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" class="form-control" id="q-email" name="email" autocomplete="email" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="q-phone" class="form-label">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" class="form-control" id="q-phone" name="phone" autocomplete="tel" pattern="[0-9+ \-]{8,20}" required>
+              <div class="invalid-feedback">Please enter a valid phone number.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="q-service" class="form-label">Service required <span class="req" aria-hidden="true">*</span></label>
+              <select class="form-select" id="q-service" name="service" required>
+                <option value="" selected disabled>Select a service</option><option value="Electrical Power Infrastructure">Electrical Power Infrastructure</option><option value="Solar &amp; BESS Solutions">Solar &amp; BESS Solutions</option><option value="Infrastructure &amp; Construction">Infrastructure &amp; Construction</option><option value="MEPF Engineering">MEPF Engineering</option><option value="HVAC Systems">HVAC Systems</option><option value="Railway &amp; Metro Infrastructure">Railway &amp; Metro Infrastructure</option><option value="Engineering &amp; Digital Solutions">Engineering &amp; Digital Solutions</option><option value="Approvals &amp; Project Delivery">Approvals &amp; Project Delivery</option><option value="Operations &amp; Maintenance">Operations &amp; Maintenance</option><option value="Other / multiple services">Other / multiple services</option>
+              </select>
+              <div class="invalid-feedback">Please choose a service.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="q-location" class="form-label">Project location</label>
+              <input type="text" class="form-control" id="q-location" name="location" autocomplete="address-level2">
+            </div>
+            <div class="col-12">
+              <label for="q-message" class="form-label">Project details <span class="req" aria-hidden="true">*</span></label>
+              <textarea class="form-control" id="q-message" name="message" rows="4" required></textarea>
+              <div class="invalid-feedback">Please describe your requirement briefly.</div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="q-consent" name="consent" required>
+                <label class="form-check-label small" for="q-consent">I agree to be contacted by KALAGNI about this enquiry.</label>
+                <div class="invalid-feedback">Please confirm so we can contact you.</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-gold btn-pill btn-lg px-4"><i class="bi bi-send" aria-hidden="true"></i> Send Enquiry</button>
+            </div>
+          </div>
+          <div class="form-success alert alert-success mt-3 mb-0" role="status" tabindex="-1">
+            <i class="bi bi-check-circle-fill" aria-hidden="true"></i> Thank you! Your enquiry has been noted. Our team will get back to you shortly.
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Bootstrap JS bundle (local copy) -->
+  <script src="../vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <!-- 4. Our own JS -->
+  <script src="../js/main.js"></script>
+</body>
+</html>
